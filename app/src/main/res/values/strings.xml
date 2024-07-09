@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FT311 GPIO</string>
+
+    <string name="title">FT311 GPIO Control</string>
+    <string name="send_title">Write IOs</string>
+    <string name="read_ios">Read IOs</string>
+    <string name="device_connection_status">Device Status</string>
+    <string name="device_connection_disconnected">FT311D Status : Disconnected</string>
+    <string name="input">INPUT</string>
+    <string name="output">OUTPUT</string>
+    <string name="gpio_1">GPIO 1</string>
+    <string name="gpio_2">GPIO 2</string>
+    <string name="gpio_3">GPIO 3</string>
+    <string name="gpio_4">GPIO 4</string>
+    <string name="gpio_5">GPIO 5</string>
+    <string name="gpio_6">GPIO 6</string>
+    <string name="gpio_7">GPIO 7</string>
+</resources>

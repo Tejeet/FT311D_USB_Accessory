@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_connection_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <LinearLayout
+            android:id="@+id/ll_connection_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/design_connected"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/iv_connection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/device_connection_status"
+                android:src="@drawable/baseline_device_hub_24"
+                app:layout_constraintBottom_toBottomOf="@id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title" />
+
+            <TextView
+                android:id="@+id/tv_connection_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:fontFamily="sans-serif-medium"
+                android:padding="10dp"
+                android:text="FT311D Status :"
+                android:textColor="@color/grey_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toTopOf="@id/btn_read"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/cv_connection_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio1_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:buttonTintMode="add"
+                    android:elevation="5dp"
+                    android:soundEffectsEnabled="true"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_1"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio1_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio2_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_2"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio2_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio3_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_3"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio3_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio4_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_4"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio4_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio5_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_5"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio5_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio6_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_6"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio6_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gpio7_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/color_primary"
+                    android:elevation="5dp"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="@string/gpio_7"
+                    android:textOff="@string/output"
+                    android:textOn="@string/input" />
+
+                <Button
+                    android:id="@+id/gpio7_control"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_input_state"
+                    android:gravity="center"
+                    android:text="@string/input" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/design_green_round_border"
+        android:elevation="10dp"
+        android:text="@string/read_ios"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@id/btn_send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/design_red_round_border"
+        android:elevation="10dp"
+        android:text="@string/send_title"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
